@@ -1,4 +1,3 @@
-
 import Box from "@mui/material/Box";
 import {
   TextField,
@@ -7,7 +6,9 @@ import {
   InputLabel,
   FilledInput,
   StandardInput,
-  Typography,Button, Grid
+  Typography,
+  Button,
+  Grid,
 } from "@mui/material";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import styled from "@emotion/styled";
@@ -62,38 +63,36 @@ const MianBox = styled.div`
 `;
 function App() {
   const [personName, setPersonName] = useState([]);
-  
+
   const [adults, setAdults] = useState(0);
   const [Children, setChildren] = useState(0);
-      const handleChange = (event) => {
-        const {
-          target: { value },
-        } = event;
-        setPersonName(
-          // On autofill we get a stringified value.
-          typeof value === "string" ? value.split(",") : value
-        );
-      };
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(
+      // On autofill we get a stringified value.
+      typeof value === "string" ? value.split(",") : value
+    );
+  };
   console.log(personName);
   const addAdults = () => {
     setAdults(adults + 1);
-  }
+  };
   const removeAdults = () => {
     setAdults(adults - 1);
-  }
+  };
   const addChildren = () => {
     setChildren(Children + 1);
   };
   const removeChildren = () => {
     setChildren(Children - 1);
   };
- 
 
-  
   return (
     <MianBox>
       <HeaderText />
-      <HederTitle/>
+      <HederTitle />
       <Box className="formMainBox">
         <Box component="form" noValidate autoComplete="off" className="form">
           <Box component="div" className="fieldBox">
